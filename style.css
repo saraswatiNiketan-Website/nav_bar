@@ -6,7 +6,7 @@ body {
     background-color: black;
 }
 
-/* Styles for menu container and button */
+
 .menu-container {
     position: fixed;
     top: 1rem;
@@ -71,7 +71,7 @@ body {
     padding: 10px;
     text-decoration: none;
     transition: color 0.3s;
-    position: relative; /* Ensure the ::before pseudo-element is positioned relative to this */
+    position: relative;
 }
 .nav-link.active {
     color: gold;
