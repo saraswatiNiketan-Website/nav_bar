@@ -3,21 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuContainer = document.querySelector('.menu-container');
     const nav = document.querySelector('.nav');
     const closeBtn = document.querySelector('.close-btn');
-    const containers = document.querySelectorAll('.container, .container1, .container2');
+    const containers = document.querySelectorAll('.container1, .container2');
 
     function toggleMenu() {
         menuContainer.classList.toggle('open');
         nav.classList.toggle('open');
 
         if (nav.classList.contains('open')) {
-            menuContainer.style.right = '260px'; 
+            menuContainer.style.right = '260px';
             containers.forEach(container => {
-                container.style.right = '260px'; 
+                container.style.right = '260px';
             });
         } else {
             menuContainer.style.right = '0';
             containers.forEach(container => {
-                container.style.right = '0'; 
+                container.style.right = '0';
             });
         }
     }
@@ -31,10 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!menuContainer.contains(target) && !target.matches('#menu-btn')) {
             menuContainer.classList.remove('open');
             nav.classList.remove('open');
-            menuContainer.style.right = '0'; // Reset menu container position
+            menuContainer.style.right = '0';
             containers.forEach(container => {
-                container.style.right = '0'; // Reset containers position
+                container.style.right = '0';
             });
         }
+    });
+
+    // Hover effect on menu-container when mouse enters nav
+    nav.addEventListener('mouseenter', function() {
+        menuContainer.classList.add('hover');
+    });
+
+    nav.addEventListener('mouseleave', function() {
+        menuContainer.classList.remove('hover');
     });
 });

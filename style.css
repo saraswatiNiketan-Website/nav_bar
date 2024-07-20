@@ -3,36 +3,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-button {
-  padding: 17px 40px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: 0;
-  background-color: #ff9f17;;
-  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.5s ease;
+    background-color: black;
 }
 
-button:hover {
-  letter-spacing: 3px;
-  background-color: blue;
-  color: hsl(0, 0%, 100%);
-  
-}
-
-button:active {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
-}
-
+/* Styles for menu container and button */
 .menu-container {
     position: fixed;
     top: 1rem;
@@ -40,13 +14,13 @@ button:active {
     display: flex;
     align-items: center;
     z-index: 2;
-    width: 80px;
+    width: 200px;
     height: 40px;
     background-color: #ffffff;
-    border: 2px solid black;
     border-radius: 10px 0 0 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
 .menu-container:hover {
@@ -60,13 +34,14 @@ button:active {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    color: #aaff55; /* Initial color */
+    color: #aaff55;
 }
 
 .menu-container:hover .menu-btn {
-    color: black; /* Change color on hover */
+    color: black;
 }
 
+/* Navigation styles */
 .nav {
     position: fixed;
     top: 0;
@@ -77,7 +52,7 @@ button:active {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-   justify-content: flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
     z-index: 1;
     transition: right 0.3s ease;
@@ -88,76 +63,127 @@ button:active {
     right: 0; /* Slide in when open */
 }
 
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav ul li {
-    margin: 1rem 0;
-    text-align: left; /* Align text to the left */
-}
-
-.nav ul li a {
-    color: #333;
+.nav-link {
+    margin-left: 2pc;
+    margin-top: 1pc;
+    display: block;
+    color: #000000;
+    padding: 10px;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: color 0.3s ease; 
-   text-align: center;
+    transition: color 0.3s;
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to this */
+}
+.nav-link.active {
+    color: gold;
+}
+.login-button {
+    margin-left: 2pc;
+    background-color: #FFA500;
+    width: 10pc;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    transition: color 0.3s;
+    border-radius:12px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.login-button:hover {
+    margin-left: 2pc;
+    background-color: darkblue;
+    width: 10pc;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    transition: color 0.3s;
+    border-radius:12px;
+    
 }
 
-.nav ul li a:hover {
-    color: #007bff; 
+.plus-icon {
+    position: absolute;
+    right: -8pc;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: black;
+    font-size: 1.2rem; 
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 4px;
 }
+
 
 .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    font-size: 2rem;
-    color: #333;
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-.close-btn:hover {
-    color: #555;
-}
-
-.container1 {
     display: flex;
-    position: fixed;
-    top: 6rem; /* Adjusted top position */
-    right: 1rem;
-    width: 80px;
-    height: 40px;
-    background-color: #ffffff;
-    border: 2px solid black;
-    border-radius: 10px 0 0 10px;
+    position: absolute;
+    right: 1.2rem;
+    width: 40px;
+    height: 35px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    align-items: center;
+    font-size: 1.8rem;
+    color: #333;
+    transition: color 0.4s ease; /* Smooth color transition */
+    background-color: #f6f6ee;
     justify-content: center;
 }
 
+.close-btn:hover {
+    color: red;
+    background-color: black;
+}
+
+.container1,
 .container2 {
     position: fixed;
-    top: 9.5rem; /* Adjusted top position */
-    right: 1rem;
-    width: 80px;
+    top: 5rem; /* Adjusted top position */
+    right: 0.9rem;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    width: 200px;
     height: 40px;
     background-color: #ffffff;
-    border: 2px solid black;
     border-radius: 10px 0 0 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
+}
+
+.container2 {
+    top: 9rem; /* Adjusted top position */
 }
 
 .container1:hover,
 .container2:hover {
     background-color: #aaff55; /* Change background color on hover */
+}
+
+.bell {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #aaff55; /* Initial color */
+    text-decoration: none;
+}
+
+.container1:hover .bell,
+.container2:hover .bell {
+    color: black; /* Change color on hover */
+}
+
+.bell-label {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
 }
